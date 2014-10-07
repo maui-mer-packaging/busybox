@@ -4,10 +4,10 @@ Version: 1.21.0
 Release: 1
 License: GPLv2
 Group: System/Shells
-Source0: http://www.busybox.net/downloads/%{name}-%{version}.tar.bz2
-Source1: rpm/udhcpd.service
+Source0: %{name}-%{version}.tar.xz
+Source1: udhcpd.service
 Source2: busybox-static.config
-URL: https://github.com/mer-packages/busybox 
+URL: http://www.busybox.net/
 
 BuildRequires: glibc-static
 
@@ -64,7 +64,7 @@ the symlinks implementing the dhcp utilities (udhcpc/udhcpcd).
 Busybox documentation and user guides
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%setup -q -n %{name}-%{version}
 
 %build
 # TODO: This config should be synced with the dynamic config at some point
