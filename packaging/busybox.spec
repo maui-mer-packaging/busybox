@@ -7,6 +7,7 @@ Group: System/Shells
 Source0: %{name}-%{version}.tar.xz
 Source1: udhcpd.service
 Source2: busybox-static.config
+Source3: busybox-sailfish.config
 URL: http://www.busybox.net/
 
 BuildRequires: glibc-static
@@ -79,7 +80,7 @@ make clean
 make distclean
 
 # Build dynamic version
-cp busybox-sailfish.config .config
+cp %{SOURCE3} .config
 yes "" | make oldconfig
 make %{_smp_mflags}
 make busybox.links
